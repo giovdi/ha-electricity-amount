@@ -11,8 +11,7 @@ blueprint:
       selector:
         entity:
           filter:
-            domain: sensor
-            device_class: template
+            domain: template
     energy_sensor:
       name: "Energy sensor"
       selector:
