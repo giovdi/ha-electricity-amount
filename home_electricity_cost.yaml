@@ -11,13 +11,15 @@ blueprint:
       selector:
         entity:
           filter:
-            domain: template
+            domain: sensor
+            device_class: template
     energy_sensor:
       name: "Energy sensor"
       selector:
         entity:
           filter:
-            domain: energy
+            domain: sensor
+            device_class: energy
     new_sensor_name:
       name: "Cost sensor name"
       description: "Set the name of the new sensor that HA will create"
