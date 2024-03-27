@@ -1,0 +1,52 @@
+blueprint:
+  name: "Electricity cost per device"
+  description: "This automation updates an input sensor with the total spent amount per device. It uses a sensor with the current price to update itself. Use a meter to set up tariffs and consider using the giovdi/ha-prices blueprint to automatize the switch between tariffs."
+  source_url: https://github.com/giovdi/ha-electricity-cost/edit/main/home_electricity_cost.yaml
+  domain: automation
+
+  input:
+    tariff_current_sensor:
+      name: "Current electricity price"
+      description: "Sensor with the current electricity price"
+      selector:
+        entity:
+          filter:
+            domain: template
+    energy_sensor:
+      name: "Energy sensor"
+      selector:
+        entity:
+          filter:
+            domain: energy
+    new_sensor_name:
+      name: "Cost sensor name"
+      description: "Set the name of the new sensor that HA will create"
+          
+mode: restart
+max_exceeded: silent
+
+variables:
+  tariff_current_sensor: !input tariff_current_sensor
+  energy_sensor: !input energy_sensor
+  new_sensor_name: !input new_sensor_name
+  total_sensor_id: "cost_{{ energy_sensor.entity_id} }"
+
+trigger:
+  - platform: state
+    entity_id: !input energy_sensor
+    
+sensor:
+  - name: "{{ new_sensor_name }}"
+    unique_id: "{{ total_sensor_id }}"
+    icon: "mdi:money"
+    unit_of_measurement: EUR
+    state: >-
+      {% set stroomprijs = states(tariff_current_sensor) | float(0) %}
+      {% set delta = trigger.to_state.state | float(0) - trigger.from_state.state | float(0) %}
+      {% set previous = (this.state if this is defined else 0) | float(0) %}
+      {% if delta > 0 %}
+        {{ previous + delta * stroomprijs }}
+      {% else %}
+        {{ previous }}
+      {% endif %}
+      
