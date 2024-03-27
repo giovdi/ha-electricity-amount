@@ -1,7 +1,7 @@
 blueprint:
   name: "Electricity cost per device"
   description: "This automation updates an input sensor with the total spent amount per device. It uses a sensor with the current price to update itself. Use a meter to set up tariffs and consider using the giovdi/ha-prices blueprint to automatize the switch between tariffs."
-  source_url: https://github.com/giovdi/ha-electricity-cost/edit/main/home_electricity_cost.yaml
+  source_url: https://github.com/giovdi/ha-electricity-cost/blob/main/home_electricity_cost.yaml
   domain: automation
 
   input:
