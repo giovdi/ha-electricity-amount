@@ -34,9 +34,6 @@ max_exceeded: silent
 
 variables:
   tariff_current_sensor: !input tariff_current_sensor
-  energy_sensor: !input energy_sensor
-  new_sensor_name: !input new_sensor_name
-  total_sensor_id: "cost_{{ energy_sensor.entity_id }}"
 
 trigger:
   - platform: state
