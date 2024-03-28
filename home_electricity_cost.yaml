@@ -13,10 +13,12 @@ blueprint:
           filter:
             domain: sensor
             device_class: monetary
-    energy_sensor:
-      name: "Energy sensor"
+    energy_sensors:
+      name: "Energy sensors"
+      description: "Sensors that the automation will read"
       selector:
         entity:
+          multiple: true
           filter:
             domain: sensor
             device_class: energy
@@ -37,7 +39,7 @@ variables:
 
 trigger:
   - platform: state
-    entity_id: !input energy_sensor
+    entity_id: !input energy_sensors
 
 action:
   - sensor:
