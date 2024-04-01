@@ -29,7 +29,6 @@ blueprint:
         entity:
           filter:
             domain: input_number
-            device_class: monetary
           
 mode: restart
 max_exceeded: silent
