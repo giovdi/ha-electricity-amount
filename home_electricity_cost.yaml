@@ -41,9 +41,11 @@ trigger:
     entity_id: !input energy_sensors
 
 action:
-  - sensor:
+  - service: input_number.set_value
+    target:
       entity_id: !input output_sensor
-      state: >-
+    data:
+      value: >-
         {% set price  = states(tariff_current_sensor) | float(0) %}
         {% set delta = trigger.to_state.state | float(0) - trigger.from_state.state | float(0) %}
         {% set previous = (this.state if this is defined else 0) | float(0) %}
