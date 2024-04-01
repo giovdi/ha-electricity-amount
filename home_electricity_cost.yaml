@@ -28,7 +28,7 @@ blueprint:
       selector:
         entity:
           filter:
-            domain: sensor
+            domain: input_number
             device_class: monetary
           
 mode: restart
