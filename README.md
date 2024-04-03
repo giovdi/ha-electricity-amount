@@ -6,7 +6,8 @@
 
 Setup an Input Sensor with the following YAML:
 ```
-cost_rack:
+input_number:
+  cost_rack:
     name: Electricity cost Rack
     icon: mdi:cash
     min: 0
@@ -22,16 +23,17 @@ This will be the output of our calculus. Every point will be the actual consumpt
 
 Now you can define the Utility meter that will handle the consumption, as the following YAML:
 ```
-energy_rack:
-  unique_id: energy_rack
-  name: Counter Rack
-  source: input_number.cost_rack
-  cycle: monthly
-  tariffs:
-    - F1
-    - F2
-    - F3
-  delta_values: true
-  always_available: true
+utility_meter:
+  energy_rack:
+    unique_id: energy_rack
+    name: Counter Rack
+    source: input_number.cost_rack
+    cycle: monthly
+    tariffs:
+      - F1
+      - F2
+      - F3
+    delta_values: true
+    always_available: true
 ```
 
