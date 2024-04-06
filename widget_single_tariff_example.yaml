@@ -21,7 +21,7 @@ color_list:
   - lightsalmon
   - crimson
 series:
-  - entity: sensor.energy_amount_pc_stampante
+  - entity: sensor.energy_amount_rack
     name: Today
     yaxis_id: main
     float_precision: 4
@@ -32,7 +32,7 @@ series:
     show:
       in_header: false
       legend_value: false
-  - entity: sensor.energy_amount_pc_stampante
+  - entity: sensor.energy_amount_rack
     name: Yesterday
     offset: '-1d'
     opacity: 0.4
@@ -46,7 +46,7 @@ series:
     show:
       in_header: false
       legend_value: false
-  - entity: sensor.energy_amount_pc_stampante
+  - entity: sensor.energy_amount_rack
     name: Total today
     yaxis_id: hidden
     float_precision: 4
