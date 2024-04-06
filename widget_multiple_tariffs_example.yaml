@@ -1,0 +1,136 @@
+type: custom:apexcharts-card
+apex_config:
+  chart:
+    stacked: true
+  stroke:
+    dashArray: 3
+yaxis:
+  - id: main
+    decimals: 4
+  - id: hidden
+    show: false
+graph_span: 24h
+update_interval: 10m
+span:
+  start: day
+header:
+  show: true
+  title: Electricity Cost Rack
+  show_states: true
+  colorize_states: true
+color_list:
+  - crimson
+  - orange
+  - forestgreen
+  - lightsalmon
+  - moccasin
+  - lightgreen
+  - crimson
+  - orange
+  - forestgreen
+series:
+  - entity: sensor.energy_amount_rack_f1
+    name: F1
+    yaxis_id: main
+    float_precision: 4
+    type: column
+    group_by:
+      func: diff
+      duration: 60min
+    show:
+      in_header: false
+      legend_value: false
+  - entity: sensor.energy_amount_rack_f2
+    name: F2
+    yaxis_id: main
+    float_precision: 4
+    type: column
+    group_by:
+      func: diff
+      duration: 60min
+    show:
+      in_header: false
+      legend_value: false
+  - entity: sensor.energy_amount_rack_f3
+    name: F3
+    yaxis_id: main
+    float_precision: 4
+    type: column
+    group_by:
+      func: diff
+      duration: 60min
+    show:
+      in_header: false
+      legend_value: false
+  - entity: sensor.energy_amount_rack_f1
+    name: F1
+    offset: '-1d'
+    opacity: 0.4
+    stroke_width: 3
+    yaxis_id: main
+    float_precision: 4
+    type: area
+    group_by:
+      func: diff
+      duration: 60min
+    show:
+      in_header: false
+      legend_value: false
+  - entity: sensor.energy_amount_rack_f2
+    name: F2
+    offset: '-1d'
+    opacity: 0.4
+    stroke_width: 3
+    yaxis_id: main
+    float_precision: 4
+    type: area
+    group_by:
+      func: diff
+      duration: 60min
+    show:
+      in_header: false
+      legend_value: false
+  - entity: sensor.energy_amount_rack_f3
+    name: F3
+    offset: '-1d'
+    opacity: 0.4
+    stroke_width: 3
+    yaxis_id: main
+    float_precision: 4
+    type: area
+    group_by:
+      func: diff
+      duration: 60min
+    show:
+      in_header: false
+      legend_value: false
+  - entity: sensor.energy_amount_rack_f1
+    name: F1
+    yaxis_id: hidden
+    float_precision: 4
+    type: column
+    group_by:
+      func: diff
+      duration: 1d
+    show:
+      in_chart: false
+  - entity: sensor.energy_amount_rack_f2
+    name: F2
+    yaxis_id: hidden
+    float_precision: 4
+    type: column
+    group_by:
+      func: diff
+      duration: 1d
+    show:
+      in_chart: false
+  - entity: sensor.energy_amount_rack_f3
+    name: F3
+    yaxis_id: hidden
+    float_precision: 4
+    type: column
+    group_by:
+      func: diff
+      duration: 1d
+    show:
+      in_chart: false
