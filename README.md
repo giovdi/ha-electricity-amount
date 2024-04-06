@@ -61,17 +61,20 @@ Add this integration to your Home Assistant using this button:
 
 This integration will track all the delta changes in the input counters, calculate the amount spent for each delta and output the result into the Output sensor.
 
-### 3. Add widget to a Dashboard
+### 3. Add widgets to a Dashboard
 
 Finally, you can add any widget to the Dashboard to display the Output sensor result.
 
-I suggest using ApexCharts Card by RomRider, available in [HACS](https://hacs.xyz/). Here's the documentation: [![giovdi - ha-prices](https://img.shields.io/static/v1?label=RomRider&message=apexcharts-card&color=blue&logo=github)](https://github.com/RomRider/apexcharts-card).
+I suggest using the ApexCharts Card by RomRider, available in [HACS](https://hacs.xyz/). Here's the documentation: [![giovdi - ha-prices](https://img.shields.io/static/v1?label=RomRider&message=apexcharts-card&color=blue&logo=github)](https://github.com/RomRider/apexcharts-card).
 
 Add it to your Home Assistant with this shortcut:
 
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=RomRider&repository=apexcharts-card&category=plugin)
 
---WIP
+Here there are a few examples of widgets made with the ApexChart card:
+
+- Single tariff, starting at midnight, compared to the previous day: [widget_single_tariff_example.yaml](widget_single_tariff_example.yaml)
+- Multiple tariffs, starting at midnight, compared to the previous day: [widget_multiple_tariffs_example.yaml](widget_multiple_tariffs_example.yaml)
 
 ## Issues or suggestions?
 
