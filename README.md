@@ -46,7 +46,6 @@ utility_meter:
 #      - F1
 #      - F2
 #      - F3
-    delta_values: true
     always_available: true
 ```
 
