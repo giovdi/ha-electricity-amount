@@ -35,6 +35,7 @@ max_exceeded: silent
 
 variables:
   tariff_current_sensor: !input tariff_current_sensor
+  output_sensor: !input output_sensor
 
 trigger:
   - platform: state
@@ -48,5 +49,9 @@ action:
       value: >-
         {% set price  = states(tariff_current_sensor) | float(0) %}
         {% set delta = trigger.to_state.state | float(0) - trigger.from_state.state | float(0) %}
-        {{ delta * price }}
-        
+        {% set previous = states(output_sensor) | float(0) %}
+        {% if delta > 0 %}
+          {{ previous + delta * price }}
+        {% else %}
+          {{ previous }}
+        {% endif %}
