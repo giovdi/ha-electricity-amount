@@ -32,7 +32,7 @@ input_number:
     unit_of_measurement: EUR
 ```
 
-ℹ️ If you're in Italy, I strongly suggest using the [![giovdi - ha-prices](https://img.shields.io/static/v1?label=giovdi&message=ha-prices&color=blue&logo=github)](https://github.com/giovdi/ha-electricity-cost) Blueprint, to automate the sensor based on the current tariff band.
+ℹ️ If you're in Italy, I strongly suggest using the [![giovdi - ha-prices](https://img.shields.io/static/v1?label=giovdi&message=ha-prices&color=blue&logo=github)](https://github.com/giovdi/ha-prices) Blueprint, to automate the sensor based on the current tariff band.
 
 **Utility meter**: it will track all the charges and, if set, split them into tariff bands.
 ```
