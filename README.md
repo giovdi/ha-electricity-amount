@@ -1,9 +1,9 @@
 # Home Assistant Blueprint - Electricity cost per device
 
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) 80%
-![Project stage: Beta](https://img.shields.io/badge/project%20stage-alpha-red.svg)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+![Project stage: Beta](https://img.shields.io/badge/project%20stage-beta-blue.svg)
 
-⚠️ THIS BLUEPRINT IS IN ALPHA STAGE. I started testing this Blueprint on my Home Assistant in early April 2024, and the tests will last for at least a few months. Feel free to test this on your own, but by using this Blueprint, you accept the risk of unexpected results and Utility Meters reset. Thanks for understanding!
+⚠️ THIS BLUEPRINT IS IN BETA STAGE. I started testing this Blueprint on my Home Assistant in early April 2024, and the tests will last for at least a few months. Feel free to test this on your own, but by using this Blueprint, you accept the risk of unexpected results and Utility Meters reset. Thanks for understanding!
 
 # Setup
 
