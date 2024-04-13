@@ -51,7 +51,7 @@ action:
         {% set from_state = trigger.from_state.state | float(0) %}
         {% set delta = trigger.to_state.state | float(0) - from_state %}
         {% set previous = states(output_sensor) | float(0) %}
-        {% if from_state > 0 && delta > 0 %}
+        {% if from_state > 0 and delta > 0 %}
           {{ previous + delta * price }}
         {% else %}
           {{ previous }}
